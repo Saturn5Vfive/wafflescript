@@ -64,6 +64,7 @@ functions.append(InbuiltFunction(name='sys', args=['cmd'], consumer="__import__(
 functions.append(InbuiltFunction(name="http_get", args=["uri"], consumer="fnc_returns(__import__('requests').get(uri).text)"))
 functions.append(InbuiltFunction(name="strepl", args=['s', 'targ', 'value'], consumer="fnc_returns(s.replace(targ, value))"))
 functions.append(InbuiltFunction(name="strcat", args=['a', 'b'], consumer="fnc_returns(a + b)"))
+functions.append(InbuiltFunction(name="getenv", args=['env'], consumer="fnc_returns(__import__('os').getenv(env))"))
 
 class Executor:
     def __init__(self, prgm):
